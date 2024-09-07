@@ -43,9 +43,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install cryptography pillow piexif
 
-    - name: Install Dependencies
-      run: npm install
-
     - name: Run Python loader script
       env:
         ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
