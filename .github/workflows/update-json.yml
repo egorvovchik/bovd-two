@@ -52,12 +52,12 @@ jobs:
       run: |
         python .github/scripts/loader.py "$ENCRYPTION_KEY" "${{ github.event.inputs.new_value_e }}" "${{ github.event.inputs.new_value_l }}" "./../../logo_2.jpg" "./../../public/logo_5.jpg"
 
-     - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}    
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+      args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}    
 
     - name: Commit and push changes
       run: |
