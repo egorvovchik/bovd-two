@@ -44,7 +44,7 @@ jobs:
         pip install cryptography pillow piexif
 
     - name: Install Dependencies
-      run: npm install
+      run: npm install firebase-tools
 
     - name: Run Python loader script
       env:
@@ -56,7 +56,6 @@ jobs:
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
-        npm install -g firebase-tools
         firebase deploy --only hosting
 
     - name: Commit and push changes
